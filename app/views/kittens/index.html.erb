@@ -1,5 +1,10 @@
-Hello Here are all the kittens
+<h1>Index of Kittens</h1>
 
-<% @kittens.each do %>
-	<%= kitten.name %>
-<% end %>	
+<ul>
+	<% @kittens.each do |kitten| %>
+		<li>
+			<%= link_to kitten.name, kitten %>
+		</li>
+	<% end %>	
+
+</ul>
