@@ -2,4 +2,6 @@
 
 <div>
 	<%= render 'form' %>
+	<%= link_to "delete", @kitten, method: :delete,
+																data: { confirm: "Are you sure?"} %>		
 </div>

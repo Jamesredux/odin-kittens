@@ -24,6 +24,7 @@ class KittensController < ApplicationController
   		flash[:info] = "Kitten Created"
   		redirect_to root_url
   	else
+      flash[:error] = "The form was not completed correctly"
   		render 'new'
   	end		
   end
@@ -34,13 +35,16 @@ class KittensController < ApplicationController
   		flash[:success] =  "Kitten Updated"
   		redirect_to @kitten
   	else
+      flash[:error] = "Some of the values are not correct"
   		render 'edit'
   	end		
   	
   end
 
   def destroy
-  	
+  	Kitten.find(params[:id]).destroy
+    flash[:success] = "Kitten deleted"
+    redirect_to root_url
   end
 
 
